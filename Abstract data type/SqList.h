@@ -1,6 +1,7 @@
 #pragma once
 #define LIST_INIT_SIZE 100
 #define LISTINCREMENT 10
+#include <EX_Standard.h>
 
 typedef int ElemType;
 
@@ -10,3 +11,15 @@ typedef struct{
 	int length;
 	int listsize;
 }SqList;
+
+Status compare(ElemType elem1, ElemType elem2);									//2.6会用到，判等函数
+
+Status InitList_Sq(SqList &L);													//2.3构造函数
+Status ListInsert_Sq(SqList &L, int i, ElemType e);								//2.4插入
+Status ListDelete_Sq(SqList &L, int i, ElemType &e);							//2.5删除
+int LocateElem_sq(SqList L, ElemType e,Status(*compare)(ElemType, ElemType));	//2.6查找定位
+void MergeList_Sq(SqList La, SqList Lb, SqList &Lc);							//2.7顺序表的合并
+
+
+
+
