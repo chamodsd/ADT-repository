@@ -1,9 +1,6 @@
 #pragma once
-#define LIST_INIT_SIZE 100
-#define LISTINCREMENT 10
-#include <EX_Standard.h>
 
-typedef int ElemType;
+#include "EX_Standard.h"
 
 typedef struct{
 	ElemType *elem;		

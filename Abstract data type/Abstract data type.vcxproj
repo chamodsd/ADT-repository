@@ -117,10 +117,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="LinkList.h" />
     <ClInclude Include="SqList.h" />
     <ClInclude Include="EX_Standard.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="LinkList.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="SqList.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

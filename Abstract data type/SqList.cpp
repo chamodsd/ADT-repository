@@ -1,15 +1,9 @@
 #include <iostream>
-#include <stdio.h>
-#include <math.h>
-#include <SqList.h>
-#include <EX_Standard.h>
+#include "SqList.h"
+#include "EX_Standard.h"
 
 //via chamo
 //调试：F9设置断点，F5运行程序，F10逐步调试，观察变量变化
-
-//函数声明
-
-
 
 /*------------------------------------------------------------------------------------------------*/
 //2.3 initlist_sq 初始化 O(1)
@@ -117,35 +111,3 @@ void MergeList_Sq(SqList La, SqList Lb, SqList &Lc) {
 /*------------------------------------------------------------------------------------------------*/
 //主函数，可以把之前的使用范例COPY进来观察结果
 /*------------------------------------------------------------------------------------------------*/
-int main() {
-	SqList L;
-	int i;
-	ElemType temp;
-	//2.3 initlist
-	InitList_Sq(L);
-
-	//2.4 listinsert_sq
-	ListInsert_Sq(L, 1, 1);
-	ListInsert_Sq(L, 2, 2);
-	ListInsert_Sq(L, 3, 3);
-	ListInsert_Sq(L, 4, 6);
-	ListInsert_Sq(L, 5, 9);
-	printf("original\n");
-
-	for (i = 1;i <= L.listsize;i++) printf("L[%d]=%d\n", i-1, L.elem[i - 1]);//输出序号1~listsize，数组中秩为0~listsize-1的数
-	printf("\ndeleted\n");
-
-	//2.5 listdelete_sq
-	ListDelete_Sq(L, 1, temp);
-
-	for (i = 1;i <= L.length;i++) printf("L[%d]=%d\n", i-1, L.elem[i - 1]);
-
-	//2.6 locateelem_sq
-	printf("result:%d", LocateElem_sq(L, 100, compare));
-	
-	//2.7 mergelist_sq
-
-
-	getchar();								//等待输入enter
-	return 0;
-}

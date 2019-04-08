@@ -6,4 +6,8 @@
 #define INFEASIBLE -1
 #define OVERFLOW -2
 
+#define LIST_INIT_SIZE 100
+#define LISTINCREMENT 10
+
+typedef int ElemType;//可以灵活改变
 typedef int Status;
