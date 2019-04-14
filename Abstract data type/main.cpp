@@ -1,7 +1,7 @@
 #include <iostream>
 #include "SqList.h"
 #include "LinkList.h"
-#include "EX_Standard.h"
+#include "SqStack.h"
 
 int main() {
 	/*------------------------------------------------------------------------------------------------*/
@@ -94,7 +94,7 @@ int main() {
 	*/
 
 
-
+	
 	getchar();								//防止之前输入过enter
 	getchar();								//等待输入enter
 	return 0;

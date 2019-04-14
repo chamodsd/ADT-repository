@@ -4,7 +4,6 @@
 /*------------------------------------------------------------------------------------------------*/
 //单链表
 /*------------------------------------------------------------------------------------------------*/
-
 typedef struct LNode{
 	ElemType data;
 	struct LNode *next;
@@ -32,5 +31,3 @@ typedef struct {
 }component,SLinkList[MAXSIZE];
 
 int LocateElem_SL(SLinkList S, ElemType e);							//2.13在静态链表中寻找第一个值为e的数
-
-

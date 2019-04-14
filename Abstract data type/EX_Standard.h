@@ -9,5 +9,6 @@
 #define LIST_INIT_SIZE 100
 #define LISTINCREMENT 10
 
-typedef int ElemType;//可以灵活改变
+typedef int ElemType; //可以灵活改变·线性表用
+typedef int SElemType;//栈用
 typedef int Status;
