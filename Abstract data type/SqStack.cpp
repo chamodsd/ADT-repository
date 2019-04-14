@@ -194,13 +194,11 @@ OperandType EvaluateExpression() {
 				Push(OPTR, c);
 				c = getchar();
 				calculate(c, num);
-				//num = c;
 				break;
 			case'='://脱括号并接收下一字符
 				Pop(OPTR, x);
 				c = getchar();	
 				calculate(c, num);
-				//num = c;    
 				break;
 			case'>'://退栈并将运算结果入栈
 				Pop(OPTR, theta);
