@@ -11,6 +11,7 @@
 #define LISTINCREMENT 10
 
 typedef int ElemType;			//可以灵活改变·线性表用
-typedef char SElemType;			//栈用
+typedef int SElemType;			//栈用
 
-typedef int Status;
+typedef int Status;				//众多函数都要用到
+typedef int OperandType;		//3.4表达式求值用
