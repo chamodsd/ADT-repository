@@ -117,21 +117,21 @@ char Precede(SElemType c1, SElemType c2) {
 		if (temp2 == ')')return '>';
 		if (temp2 == '#')return '>';
 	}
-	if (temp1 == '（') {
+	if (temp1 == '(') {
 		if (temp2 == '+')return '<';
 		if (temp2 == '-')return '<';
 		if (temp2 == '*')return '<';
 		if (temp2 == '/')return '<';
 		if (temp2 == '(')return '<';
 		if (temp2 == ')')return '=';
-		//if (temp2 == '#')return '>';
+		if (temp2 == '#')return '>';//理论上是非法输入
 	}
 	if (temp1 == ')') {//可以合并成一句，为了清晰起见不合并
 		if (temp2 == '+')return '>';
 		if (temp2 == '-')return '>';
 		if (temp2 == '*')return '>';
 		if (temp2 == '/')return '>';
-		//if (temp2 == '(')return '<';
+		if (temp2 == '(')return '>';//理论上也是非法输入
 		if (temp2 == ')')return '>';
 		if (temp2 == '#')return '>';
 	}
@@ -141,7 +141,7 @@ char Precede(SElemType c1, SElemType c2) {
 		if (temp2 == '*')return '<';
 		if (temp2 == '/')return '<';
 		if (temp2 == '(')return '<';
-		//if (temp2 == ')')return '';
+		//if (temp2 == ')')return '<';//非法输入
 		if (temp2 == '#')return '=';
 	}
 }
@@ -152,6 +152,7 @@ int operate(SElemType a, SElemType theta, SElemType b) {
 	if (temp == '-') return a - b;
 	if (temp == '*') return a * b;
 	if (temp == '/') return a / b;//为了健壮性可能要用double型的a,b，这里假定可以整除
+	
 }
 
 int calculate(SElemType &c, SElemType &num) {
@@ -167,37 +168,43 @@ OperandType EvaluateExpression() {
 	//【注意表达式结束的标志是#】
 	//【注意这里的gettop返回的是e的值，应该要稍作调整】
 	//算术表达式求值的算符优先算法
+	//bug修复:输入左括号以后，一旦输入任何一个符号（包括')'都会直接死机，问题出在switch的选择支上）
 	//OP:运算符集合
 	//OPTR:运算符栈
 	//OPND:运算数栈
 	SqStack OPTR, OPND;
-	SElemType e, c, a, b, x, theta;
+	SElemType top_elem, c, a, b, x, theta;
 	SElemType num = 0;//将要放进栈的数字计数
+	char top, res;
 
 	InitStack(OPTR);
 	Push(OPTR, int('#'));//强制类型转换，这样2个栈都是int型的，方便统一处理，使用时可以再强制类型转换转回
 	InitStack(OPND);
 
 	c = getchar();//书上是这么写的，但是这里不能用这个，不然的话就会输入1，读取的是字符1，转化为INT后变成49
+	res = char(c);
 	calculate(c, num);
-	while (char(c) != '#' || char(GetTop(OPTR, e)) != '#') {
+	while (char(c) != '#' || char(GetTop(OPTR, top_elem)) != '#') {
 		if (!In(c)) {
 			Push(OPND, c);
 			c = getchar();
+			res = char(c);
 			calculate(c, num);
 		}	//这里进行了一些改动，把In视作c的函数
 		else
 			//Push(OPND, num);
 			//num = 0;
-			switch (Precede(GetTop(OPTR, e), c)) {
+			switch (Precede(GetTop(OPTR, top_elem), c)) {
 			case'<'://栈顶元素优先权低
 				Push(OPTR, c);
-				c = getchar();
+				c = getchar(); 
+				res = char(c);
 				calculate(c, num);
 				break;
-			case'='://脱括号并接收下一字符
+			case'='://脱括号并接收下一字符（满足这个要么是()要么是##）
 				Pop(OPTR, x);
 				c = getchar();	
+				res = char(c);
 				calculate(c, num);
 				break;
 			case'>'://退栈并将运算结果入栈
@@ -208,6 +215,6 @@ OperandType EvaluateExpression() {
 				break;
 			}//switch
 	}//while
-	return GetTop(OPND, e);
+	return GetTop(OPND, top_elem);
 }
 
