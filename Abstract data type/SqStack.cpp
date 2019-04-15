@@ -184,12 +184,23 @@ OperandType EvaluateExpression() {
 	c = getchar();//书上是这么写的，但是这里不能用这个，不然的话就会输入1，读取的是字符1，转化为INT后变成49
 	res = char(c);
 	calculate(c, num);
+
 	while (char(c) != '#' || char(GetTop(OPTR, top_elem)) != '#') {
+
 		if (!In(c)) {
 			Push(OPND, c);
+
 			c = getchar();
 			res = char(c);
 			calculate(c, num);
+
+			while (!In(c)) {
+				Pop(OPND, c);
+				Push(OPND, num);
+				c = getchar();
+				res = char(c);
+				calculate(c, num);
+			}
 		}	//这里进行了一些改动，把In视作c的函数
 		else
 			//Push(OPND, num);
@@ -214,6 +225,9 @@ OperandType EvaluateExpression() {
 				Push(OPND, operate(a, theta, b));
 				break;
 			}//switch
+
+		num = 0;
+
 	}//while
 	return GetTop(OPND, top_elem);
 }
