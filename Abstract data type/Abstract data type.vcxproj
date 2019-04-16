@@ -121,6 +121,7 @@
     <ClInclude Include="SqList.h" />
     <ClInclude Include="EX_Standard.h" />
     <ClInclude Include="SqStack.h" />
+    <ClInclude Include="String_type.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LinkList.cpp" />

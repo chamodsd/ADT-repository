@@ -194,7 +194,7 @@ OperandType EvaluateExpression() {
 			res = char(c);
 			calculate(c, num);
 
-			while (!In(c)) {
+			while (!In(c)) {//如果发现不是个位数，则出栈，并重新计算后进栈,似乎可以优化
 				Pop(OPND, c);
 				Push(OPND, num);
 				c = getchar();
