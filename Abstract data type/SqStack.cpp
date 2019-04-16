@@ -44,7 +44,6 @@ Status StackEmpty(SqStack S) {
 	else return 0;
 }
 
-
 /*------------------------------------------------------------------------------------------------*/
 //3.1 conversion 数制转换(10进制→8进制)
 /*------------------------------------------------------------------------------------------------*/
@@ -144,6 +143,7 @@ char Precede(SElemType c1, SElemType c2) {
 		//if (temp2 == ')')return '<';//非法输入
 		if (temp2 == '#')return '=';
 	}
+	return -1;
 }
 
 int operate(SElemType a, SElemType theta, SElemType b) {
@@ -152,7 +152,7 @@ int operate(SElemType a, SElemType theta, SElemType b) {
 	if (temp == '-') return a - b;
 	if (temp == '*') return a * b;
 	if (temp == '/') return a / b;//为了健壮性可能要用double型的a,b，这里假定可以整除
-	
+	return -1;
 }
 
 int calculate(SElemType &c, SElemType &num) {
@@ -172,24 +172,25 @@ OperandType EvaluateExpression() {
 	//OP:运算符集合
 	//OPTR:运算符栈
 	//OPND:运算数栈
+	//char top;	//测试用，用来跟踪栈顶的元素
 	SqStack OPTR, OPND;
 	SElemType top_elem, c, a, b, x, theta;
 	SElemType num = 0;//将要放进栈的数字计数
-	char top, res;
+	char res;
 
 	InitStack(OPTR);
 	Push(OPTR, int('#'));//强制类型转换，这样2个栈都是int型的，方便统一处理，使用时可以再强制类型转换转回
 	InitStack(OPND);
 
 	c = getchar();//书上是这么写的，但是这里不能用这个，不然的话就会输入1，读取的是字符1，转化为INT后变成49
-	res = char(c);
+	res = char(c);//监控c用
 	calculate(c, num);
 
-	while (char(c) != '#' || char(GetTop(OPTR, top_elem)) != '#') {
+           	while (char(c) != '#' || char(GetTop(OPTR, top_elem)) != '#') {
 
 		if (!In(c)) {
 			Push(OPND, c);
-
+			num = c;
 			c = getchar();
 			res = char(c);
 			calculate(c, num);
@@ -226,7 +227,7 @@ OperandType EvaluateExpression() {
 				break;
 			}//switch
 
-		num = 0;
+		//num = 0;
 
 	}//while
 	return GetTop(OPND, top_elem);
