@@ -15,11 +15,47 @@ int Index(SString S, SString T, int pos) {
 	else return 0;
 }
 
+/*------------------------------------------------------------------------------------------------*/
+//4.6 index_KMP KMP算法
+/*------------------------------------------------------------------------------------------------*/
+int Index_KMP(SString S, SString T, int pos) {
+	int i = pos;
+	int j = 1;
+	while (i <= S[0] && j <= T[0]) {
+		if (j == 0 || S[i] == T[j]) { ++i;  ++j; }
+		//else j = next[j];
+		//↑上述语句需要编写完算法4.7才能实现
+	}
+	if (j > T[0])return i - T[0];
+	else return 0;
+}
 
+/*------------------------------------------------------------------------------------------------*/
+//4.7 get_next next函数值算法
+/*------------------------------------------------------------------------------------------------*/
+void get_next(SString T, int next[]) {
+	int i = 1;
+	next[1] = 0;
+	int j = 0;
+	while (i < T[0]) {
+		if (j == 0 || T[i] == T[j]) { ++i;  ++j;  next[i] = j; }
+		else j = next[j];
+	}
+}
 
-
-
-
-int Index_KMP(SString S, SString T, int pos);	//算法4.6：KMP算法
-void get_next(SString T, int next[]);			//算法4.7：求next函数值的算法
-void get_nextval(SString T, int nextval[]);		//算法4.8：计算next函数修正值的算法
+/*------------------------------------------------------------------------------------------------*/
+//4.8 get_nextval 计算next函数修正值的算法
+/*------------------------------------------------------------------------------------------------*/
+void get_nextval(SString T, int nextval[]) {
+	int i = 1;
+	nextval[1] = 0;
+	int j = 0;
+	while (i < T[0]) {
+		if (j == 0 || T[i] == T[j]) {
+			++i;  ++j;
+			if (T[i] != T[j]) nextval[i] = j;
+			else nextval[i] = nextval[j];
+		}
+		else j = nextval[j];
+	}
+}
