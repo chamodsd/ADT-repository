@@ -126,6 +126,7 @@
   <ItemGroup>
     <ClCompile Include="LinkList.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Sort.h" />
     <ClCompile Include="SqList.cpp" />
     <ClCompile Include="SqStack.cpp">
       <SDLCheck Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</SDLCheck>
