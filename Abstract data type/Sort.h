@@ -62,15 +62,15 @@ typedef struct {
 /*------------------------------------------------------------------------------------------------*/
 //算法
 /*------------------------------------------------------------------------------------------------*/
-void Insertsort(int *L);										//10.1直接排序
-void BInsertsort(int *L);										//10.2折半排序
+void Insertsort(SqList &L);										//10.1直接插入排序
+void BInsertsort(SqList &L);									//10.2折半排序
 void Arrange(SLinkListType &SL);								//10.3表插入排序
 void ShellInsert(SqList &L, int dk);							//10.4希尔排序的一般形式
-void Shellsort(SqList &l, int dlta[], int t);					//10.5希尔排序
+void Shellsort(SqList &l, int dlta[], int t);					//10.5希尔排序（基本有序→效率为O(n)）
 
 void Partition(SqList &L, int low, int high);					//10.6(b)快速排序(不在中间给枢轴记录赋值而是在最后统一赋值)
 void QSort(SqList &L, int low, int high);						//10.7快速排序的递归版本
-void QuickSort(SqList &L);										//10.8快速排序
+void QuickSort(SqList &L);										//10.8快速排序（基本有序→退化成冒泡排序）
 
 void SelectSort(SqList &L);										//10.9简单选择排序
 void HeapAdjust(HeapType &H, int s, int m);						//10.10堆排序的一次筛选（？）
@@ -79,7 +79,7 @@ void HeapSort(HeapType &H);										//10.11堆排序(对记录数较少的文件不提倡，对n
 /*
 void Merge(RcdType SR[], RcdType &TR[], int i, int m, int n);	//10.12二路归并
 void MSort(RcdType SR[], RcdType &TR1[], int i, int m, int n);	//10.13二路归并的递归形式
-void MergeSort(SqList &L);										//10.14二路归并排序
+void MergeSort(SqList &L);										//10.14二路归并排序 
 */
 //上述二路归并方法中的数组不可引用，不知道是书上的谬误还是程序里的谬误，待查
 
