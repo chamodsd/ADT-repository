@@ -1,7 +1,9 @@
 #include <iostream>
+using namespace std;
 #include "SqList.h"
 #include "LinkList.h"
 #include "SqStack.h"
+#include "MergeSort_array.h"
 
 int main() {
 	/*------------------------------------------------------------------------------------------------*/
@@ -102,11 +104,18 @@ int main() {
 	conversion();		//selemtype为char型依然可以正常使用
 	//p49括号匹配
 	printf("%d",MatchBrackets()); 
-	*/
 
 	//printf("%d",EvaluateExpression());
 	printf("%d", EvaluateExpression());		//输入1#输出仍是49（1的ASCII码）
 	printf("\nOK\n");
+	*/
+
+	AElemType a[12] = { 2,5,3,6,7,5,33,434,22222,1,2,323 };
+	int i = 0;
+	int length = sizeof(a) / sizeof(AElemType);
+	MergeSort_array(a,length);
+
+	while (i<length) cout << a[i++] << " ";
 
 	getchar();								//防止之前输入过enter
 	getchar();								//等待输入enter

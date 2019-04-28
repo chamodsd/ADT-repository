@@ -118,6 +118,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="LinkList.h" />
+    <ClInclude Include="MergeSort_array.h" />
     <ClInclude Include="SqList.h" />
     <ClInclude Include="EX_Standard.h" />
     <ClInclude Include="SqStack.h" />
@@ -126,6 +127,7 @@
   <ItemGroup>
     <ClCompile Include="LinkList.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MergeSort_array.cpp" />
     <ClCompile Include="Sort.h" />
     <ClCompile Include="SqList.cpp" />
     <ClCompile Include="SqStack.cpp">
