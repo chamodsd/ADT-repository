@@ -123,6 +123,7 @@
     <ClInclude Include="EX_Standard.h" />
     <ClInclude Include="SqStack.h" />
     <ClInclude Include="String_type.h" />
+    <ClInclude Include="Linklist_questions.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="LinkList.cpp" />
@@ -134,6 +135,10 @@
       <SDLCheck Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</SDLCheck>
     </ClCompile>
     <ClCompile Include="String_type.cpp" />
+    <ClCompile Include="Del_x.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="programme_test.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
