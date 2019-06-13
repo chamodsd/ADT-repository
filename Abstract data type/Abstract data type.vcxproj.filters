@@ -19,54 +19,72 @@
     <Filter Include="头文件\Linklist_习题">
       <UniqueIdentifier>{d0838b3b-506b-4779-8717-f38178363d16}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\CPP常用语法总结">
+      <UniqueIdentifier>{453dbf99-5c5c-4292-ad9d-769238455351}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\CPP常用语法总结">
+      <UniqueIdentifier>{b7b20dd3-8cb9-4527-aed1-1fd36591c367}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\ADT">
+      <UniqueIdentifier>{dc539f1d-23be-4d78-96b1-f32af5ae5b61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\ADT">
+      <UniqueIdentifier>{926dcc7a-34ad-41f1-8d28-7938cb745e0d}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="SqList.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="EX_Standard.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="LinkList.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="SqStack.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="String_type.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
-    <ClInclude Include="MergeSort_array.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="Linklist_questions.h">
       <Filter>头文件\Linklist_习题</Filter>
     </ClInclude>
+    <ClInclude Include="cpp_experience.h">
+      <Filter>头文件\CPP常用语法总结</Filter>
+    </ClInclude>
+    <ClInclude Include="EX_Standard.h">
+      <Filter>头文件\ADT</Filter>
+    </ClInclude>
+    <ClInclude Include="LinkList.h">
+      <Filter>头文件\ADT</Filter>
+    </ClInclude>
+    <ClInclude Include="MergeSort_array.h">
+      <Filter>头文件\ADT</Filter>
+    </ClInclude>
+    <ClInclude Include="SqList.h">
+      <Filter>头文件\ADT</Filter>
+    </ClInclude>
+    <ClInclude Include="SqStack.h">
+      <Filter>头文件\ADT</Filter>
+    </ClInclude>
+    <ClInclude Include="String_type.h">
+      <Filter>头文件\ADT</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="SqList.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="Del_x.cpp">
+      <Filter>源文件\Linklist_习题</Filter>
+    </ClCompile>
+    <ClCompile Include="cpp_experience.cpp">
+      <Filter>源文件\CPP常用语法总结</Filter>
+    </ClCompile>
+    <ClCompile Include="Sort.h">
+      <Filter>头文件\ADT</Filter>
     </ClCompile>
     <ClCompile Include="LinkList.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\ADT</Filter>
+    </ClCompile>
+    <ClCompile Include="MergeSort_array.cpp">
+      <Filter>源文件\ADT</Filter>
+    </ClCompile>
+    <ClCompile Include="SqList.cpp">
+      <Filter>源文件\ADT</Filter>
+    </ClCompile>
+    <ClCompile Include="SqStack.cpp">
+      <Filter>源文件\ADT</Filter>
+    </ClCompile>
+    <ClCompile Include="String_type.cpp">
+      <Filter>源文件\ADT</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="SqStack.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="String_type.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Sort.h">
-      <Filter>头文件</Filter>
-    </ClCompile>
-    <ClCompile Include="MergeSort_array.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Del_x.cpp">
-      <Filter>源文件\Linklist_习题</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

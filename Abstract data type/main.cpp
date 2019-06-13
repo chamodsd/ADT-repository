@@ -5,18 +5,20 @@ using namespace std;
 #include "SqStack.h"
 #include "MergeSort_array.h"
 #include "Linklist_questions.h"
+#include "cpp_experience.h"
 
- int main() {
-	LinkList L;
-	CreateList_L(L, 7);	//注意头插法是逆序生成的，而且这里L带头结点
-	printf("L(before):");
-	Output_SL(L);		//顺序输出L
+int main() {
+	int a = 0;
+	int temp_1 = 1;
+	int *b = &temp_1;
+	int c = 2;
+	int temp_2 = 3;
+	int *d = &temp_2;
 
-	Del_x(L, 5);
-
-	printf("L(after):");
-	Output_SL(L);		//顺序输出L
-
+	chamo_extra_1(a);
+	chamo_extra_2(b);
+	chamo_extra_3(c);
+	chamo_extra_4(d);
 
 	getchar();								//防止之前输入过enter
 	getchar();								//等待输入enter
